@@ -1,0 +1,25 @@
+<h1>Products</h1>
+
+<!-- 
+*ngFor is a "structural directive". Structural directives shape or reshape the DOM's structure, 
+typically by adding, removing, and manipulating the elements to which they are attached. 
+Directives with an asterisk, *, are structural directives.    
+-->
+<div *ngFor="let product of products" class="product_box">
+    <h3>
+        <!--  Interpolation {{ }} lets you render the property value as text; 
+            property binding [ ] lets you use the property value in a template expression. -->
+        <a [title]="product.name + ' details'">
+            {{ product.name }}
+        </a>
+    </h3>
+    <!-- use an *ngIf directive so that Angular only creates the <p> element if 
+        the current product has a description. -->
+    <p *ngIf="product.description">
+        {{ product.description }}
+    </p>
+
+    <button (click)="share()">
+        Share
+    </button>
+</div>
