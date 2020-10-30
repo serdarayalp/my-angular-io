@@ -5,11 +5,11 @@
 typically by adding, removing, and manipulating the elements to which they are attached. 
 Directives with an asterisk, *, are structural directives.    
 -->
-<div *ngFor="let product of products" class="product_box">
+<div *ngFor="let product of products; index as productId" class="product_box">
     <h3>
         <!--  Interpolation {{ }} lets you render the property value as text; 
             property binding [ ] lets you use the property value in a template expression. -->
-        <a [title]="product.name + ' details'">
+        <a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
             {{ product.name }}
         </a>
     </h3>

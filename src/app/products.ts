@@ -1,4 +1,4 @@
-export const __products = [
+export const products = [
     {
         name: 'Phone XL',
         price: 799,
